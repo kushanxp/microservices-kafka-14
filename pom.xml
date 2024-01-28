@@ -16,7 +16,7 @@
     </properties>
 
     <modules>
-        <module>account-service</module>
+        <module>accounts</module>
         <module>cards</module>
         <module>loans</module>
     </modules>
