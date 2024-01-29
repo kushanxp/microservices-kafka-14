@@ -1,13 +1,9 @@
-spring:
-  config:
-    activate:
-      on-profile: "prod"
 
 build:
   version: 3.0
 
-loans:
-  message: "Welcome to EazyBank accounts related Prod APIs "
+cards:
+  message: "Welcome to EazyBank cards related Prod APIs "
   contactDetails:
     name: "John Doe - Prod"
     email: "john@eazybank.com"
