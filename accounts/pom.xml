@@ -47,9 +47,8 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -86,7 +85,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>kushanxp/${project.name}:s6</image>
+						<image>kushanxp/${project.name}:s7</image>
 					</to>
 				</configuration>
 			</plugin>
