@@ -11,13 +11,37 @@ spring:
           #search-locations: "classpath:/config"
           #search-locations: "file:////Users//kushanxp//projects//microservices//configs"
         git:
-          uri: https://github.com/kushanxp/udemy-microservices-configs
+          uri: https://github.com/kushanxp/udemy-microservices-configs.git
           default-label: main
           force-pull: true
           clone-on-start: true
+
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    stream:
+      username: guest
+      password: guest
+
+
 
 encrypt:
   key: "K@#$KJKJ89798"
 
 server:
   port: 8071
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true

@@ -5,17 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7829841-cee5-4485-bd37-703bcd1c84fa" name="Changes" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/common-config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/prod/common-config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/prod/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/qa/common-config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/qa/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/config/ConfigProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/config/ConfigProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/eazybytes/cards/config/ConfigProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/eazybytes/cards/config/ConfigProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/eazybytes/loans/config/ConfigProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/eazybytes/loans/config/ConfigProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,13 +26,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2bbklydEJti4ZOXaSUMDZhX9R6Z" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -40,35 +47,55 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Docker.default.configserver: Compose Deployment.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.AccountsApplication.executor": "Run",
+    "Spring Boot.CardsApplication.executor": "Run",
+    "Spring Boot.ConfigserverApplication.executor": "Run",
+    "Spring Boot.LoansApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
+    "com.codeium.enabled": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/kushanxp/projects/microservices/microservice-spring-cloud/configserver/src/main/resources/config",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/kushanxp/projects/microservices/microservice-spring-cloud/docker-compose/qa",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docker-compose/qa" />
+      <recent name="$PROJECT_DIR$/docker-compose/prod" />
       <recent name="$PROJECT_DIR$/configserver/src/main/resources/config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docker-compose/default" />
     </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConfigserverApplication">
+  <component name="RunManager" selected="Docker.default.configserver: Compose Deployment">
     <configuration name="AccountsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="accounts" />
@@ -120,7 +147,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="default.configserver: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="configserver" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose/default/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Docker.default.configserver: Compose Deployment" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
       <item itemvalue="Spring Boot.AccountsApplication" />
       <item itemvalue="Spring Boot.CardsApplication" />
@@ -128,11 +173,20 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.default.configserver: Compose Deployment" />
         <item itemvalue="Spring Boot.LoansApplication" />
         <item itemvalue="Spring Boot.CardsApplication" />
         <item itemvalue="Spring Boot.AccountsApplication" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -142,7 +196,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706491320452</updated>
-      <workItem from="1706491321461" duration="12974000" />
+      <workItem from="1706491321461" duration="16460000" />
+      <workItem from="1706750442914" duration="5466000" />
+      <workItem from="1707135855392" duration="603000" />
+      <workItem from="1728600989563" duration="29641000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -168,13 +225,22 @@
       <option name="project" value="LOCAL" />
       <updated>1706496493348</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1706653991892</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1706653991892</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
