@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: "gatewayserver"
+  config:
+    import: optional:configserver:http://localhost:8071/
+  #Below config tells spring cloud gateway to talk to Eureka Server (discovery) and get the service details.
+  #So that the services can be accessed from the gateway server.
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+
+info:
+  app:
+    name: gatewayserver
+    version: 1.0.0
+    description: Gateway Server
