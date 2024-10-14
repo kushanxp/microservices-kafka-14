@@ -1,1 +1,1 @@
-service discovery and service registration with MySQL DB.
+Added circuit breaker functionality
