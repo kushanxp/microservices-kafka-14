@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7829841-cee5-4485-bd37-703bcd1c84fa" name="Changes" comment="CorrelationId added for tracing requests and responses.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="f7829841-cee5-4485-bd37-703bcd1c84fa" name="Changes" comment="Docker compose changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -240,7 +234,7 @@
       <workItem from="1706491321461" duration="16460000" />
       <workItem from="1706750442914" duration="5466000" />
       <workItem from="1707135855392" duration="603000" />
-      <workItem from="1728600989563" duration="76763000" />
+      <workItem from="1728600989563" duration="77070000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -354,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728874007586</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Docker compose changes">
+      <option name="closed" value="true" />
+      <created>1728923772751</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1728923772751</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,6 +373,7 @@
     <MESSAGE value="Spring Cloud Gateway server added." />
     <MESSAGE value="predicates and filters added" />
     <MESSAGE value="CorrelationId added for tracing requests and responses." />
-    <option name="LAST_COMMIT_MESSAGE" value="CorrelationId added for tracing requests and responses." />
+    <MESSAGE value="Docker compose changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docker compose changes" />
   </component>
 </project>
