@@ -4,22 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7829841-cee5-4485-bd37-703bcd1c84fa" name="Changes" comment="predicates and filters added">
-      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/eazybytes/gatewayserver/filters/FilterUtility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/eazybytes/gatewayserver/filters/RequestTraceFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/eazybytes/gatewayserver/filters/ResponseTraceFilter.java" afterDir="false" />
+    <list default="true" id="f7829841-cee5-4485-bd37-703bcd1c84fa" name="Changes" comment="CorrelationId added for tracing requests and responses.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/service/ICustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/service/client/CardsFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/service/client/CardsFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/service/client/LoansFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/service/client/LoansFeignClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/java/com/eazybytes/accounts/service/impl/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/eazybytes/cards/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/eazybytes/cards/controller/CardsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/eazybytes/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/eazybytes/gatewayserver/GatewayserverApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/java/com/eazybytes/loans/controller/LoansController.java" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/java/com/eazybytes/loans/controller/LoansController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +109,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.LoansApplication">
+  <component name="RunManager" selected="Docker.default: Compose Deployment">
     <configuration name="AccountsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="accounts" />
@@ -191,6 +180,14 @@
       <deployment type="docker-compose.yml" />
       <method v="2" />
     </configuration>
+    <configuration name="default: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose/default/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="default.cardsdb: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -204,22 +201,9 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="default.loansdb: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="loansdb" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose/default/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Docker.default.cardsdb: Compose Deployment" />
-      <item itemvalue="Docker.default.loansdb: Compose Deployment" />
+      <item itemvalue="Docker.default: Compose Deployment" />
       <item itemvalue="Spring Boot.EurekaserverApplication" />
       <item itemvalue="Spring Boot.GatewayserverApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
@@ -229,11 +213,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.default: Compose Deployment" />
         <item itemvalue="Spring Boot.AccountsApplication" />
         <item itemvalue="Spring Boot.LoansApplication" />
         <item itemvalue="Spring Boot.CardsApplication" />
         <item itemvalue="Docker.default.cardsdb: Compose Deployment" />
-        <item itemvalue="Docker.default.loansdb: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +240,7 @@
       <workItem from="1706491321461" duration="16460000" />
       <workItem from="1706750442914" duration="5466000" />
       <workItem from="1707135855392" duration="603000" />
-      <workItem from="1728600989563" duration="73469000" />
+      <workItem from="1728600989563" duration="76763000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -362,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728866523853</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="CorrelationId added for tracing requests and responses.">
+      <option name="closed" value="true" />
+      <created>1728874007586</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1728874007586</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,6 +370,7 @@
     <MESSAGE value="docker-compose.yml changes" />
     <MESSAGE value="Spring Cloud Gateway server added." />
     <MESSAGE value="predicates and filters added" />
-    <option name="LAST_COMMIT_MESSAGE" value="predicates and filters added" />
+    <MESSAGE value="CorrelationId added for tracing requests and responses." />
+    <option name="LAST_COMMIT_MESSAGE" value="CorrelationId added for tracing requests and responses." />
   </component>
 </project>
