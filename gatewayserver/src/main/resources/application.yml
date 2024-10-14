@@ -25,9 +25,14 @@ management:
     env:
       enabled: true
 
-
 info:
   app:
     name: gatewayserver
     version: 1.0.0
     description: Gateway Server
+
+logging:
+  level:
+    com:
+      eazybytes:
+        gatewayserver: debug

@@ -48,3 +48,9 @@ info:
     name: loans
     version: 1.0.0
     description: Loans Service
+
+logging:
+  level:
+    com:
+      eazybytes:
+        loans: debug

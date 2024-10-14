@@ -49,3 +49,9 @@ info:
     name: accounts
     version: 1.0.0
     description: Accounts Service
+
+logging:
+  level:
+    com:
+      eazybytes:
+        accounts: debug

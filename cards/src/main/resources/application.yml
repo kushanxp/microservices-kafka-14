@@ -49,3 +49,9 @@ info:
     name: cards
     version: 1.0.0
     description: Cards Service
+
+logging:
+  level:
+    com:
+      eazybytes:
+        cards: debug
