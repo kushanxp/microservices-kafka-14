@@ -200,6 +200,7 @@ public class LoansController {
 
     @GetMapping("/contact-info")
     public ResponseEntity<ConfigProperties> getContactInfo() {
+        logger.debug("Contact Info called!");
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(configProperties);
