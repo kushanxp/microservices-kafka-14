@@ -4,12 +4,14 @@ spring:
   config:
     import: optional:configserver:http://localhost:8071/
   #Below config tells spring cloud gateway to talk to Eureka Server (discovery) and get the service details.
-  #So that the services can be accessed from the gateway server.
+  #So that the services can be accessed from the gateway server. (enabled: true)
+  #If enabled: false, we need to define the URLs of the services in gateway server.
   cloud:
     gateway:
       discovery:
         locator:
-          enabled: true
+          enabled: false
+          lower-case-service-id: true
 
 management:
   endpoints:
