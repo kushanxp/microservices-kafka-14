@@ -77,4 +77,16 @@ resilience4j:
         permitted-number-of-calls-in-half-open-state: 10
         sliding-window-size: 10
         failure-rate-threshold: 50
+  retry: #enable individual service level Resiliency
+    instances:
+      default:
+        wait-duration: 100ms
+        max-attempts: 3
+        enable-exponential-backoff: true
+        exponential-backoff-multiplier: 5
+        exponential-backoff-max-attempts: 10
+        retry-exceptions:
+          - java.lang.RuntimeException
+
+
 
