@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7829841-cee5-4485-bd37-703bcd1c84fa" name="Changes" comment="Circuit breaker retry logic added to Account build-info endpoint">
+    <list default="true" id="f7829841-cee5-4485-bd37-703bcd1c84fa" name="Changes" comment="Rate limiter pattern for Cards implemented for contact-info endpoint.&#10;1 user - 1 request per second or else too many requests will be thrown.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/eazybytes/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/eazybytes/gatewayserver/GatewayserverApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,41 +52,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Docker.default.accountsdb: Compose Deployment.executor": "Run",
-    "Docker.default.cardsdb: Compose Deployment.executor": "Run",
-    "Docker.default.configserver: Compose Deployment.executor": "Run",
-    "Docker.default.loansdb: Compose Deployment.executor": "Run",
-    "Docker.default: Compose Deployment.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.AccountsApplication.executor": "Run",
-    "Spring Boot.CardsApplication.executor": "Run",
-    "Spring Boot.ConfigserverApplication.executor": "Run",
-    "Spring Boot.EurekaserverApplication.executor": "Run",
-    "Spring Boot.GatewayserverApplication.executor": "Run",
-    "Spring Boot.LoansApplication.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/kushanxp/projects/microservices/microservice-spring-cloud/docker-compose/qa",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Docker.default.accountsdb: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.default.cardsdb: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.default.configserver: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.default.loansdb: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.default: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AccountsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CardsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kushanxp/projects/microservices/microservice-spring-cloud/docker-compose/qa&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -108,8 +113,11 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayserverApplication">
+  <component name="RunManager" selected="Docker.default: Compose Deployment">
     <configuration name="AccountsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="JAVA_HOME" value="Java17" />
+      </envs>
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="accounts" />
       <option name="PROGRAM_PARAMETERS" value="--spring.profiles.active=prod" />
@@ -176,7 +184,17 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="default: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose/default/docker-compose.yml" />
+        </settings>
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="default.cardsdb: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -192,22 +210,9 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="default.loansdb: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="loansdb" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose/default/docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Docker.default: Compose Deployment" />
       <item itemvalue="Docker.default.cardsdb: Compose Deployment" />
-      <item itemvalue="Docker.default.loansdb: Compose Deployment" />
       <item itemvalue="Spring Boot.EurekaserverApplication" />
       <item itemvalue="Spring Boot.GatewayserverApplication" />
       <item itemvalue="Spring Boot.ConfigserverApplication" />
@@ -217,11 +222,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.default: Compose Deployment" />
+        <item itemvalue="Spring Boot.AccountsApplication" />
         <item itemvalue="Spring Boot.CardsApplication" />
         <item itemvalue="Spring Boot.LoansApplication" />
-        <item itemvalue="Spring Boot.AccountsApplication" />
         <item itemvalue="Docker.default.cardsdb: Compose Deployment" />
-        <item itemvalue="Docker.default.loansdb: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +249,8 @@
       <workItem from="1706491321461" duration="16460000" />
       <workItem from="1706750442914" duration="5466000" />
       <workItem from="1707135855392" duration="603000" />
-      <workItem from="1728600989563" duration="96008000" />
+      <workItem from="1728600989563" duration="98392000" />
+      <workItem from="1729026848141" duration="2045000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -406,7 +412,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728954951975</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Rate limiter pattern for Cards implemented for contact-info endpoint.&#10;1 user - 1 request per second or else too many requests will be thrown.">
+      <option name="closed" value="true" />
+      <created>1728956989975</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1728956989975</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,6 +441,7 @@
     <MESSAGE value="Circuit breaker configurations" />
     <MESSAGE value="Circuit breaker retry logic added to Loans service" />
     <MESSAGE value="Circuit breaker retry logic added to Account build-info endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Circuit breaker retry logic added to Account build-info endpoint" />
+    <MESSAGE value="Rate limiter pattern for Cards implemented for contact-info endpoint.&#10;1 user - 1 request per second or else too many requests will be thrown." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rate limiter pattern for Cards implemented for contact-info endpoint.&#10;1 user - 1 request per second or else too many requests will be thrown." />
   </component>
 </project>

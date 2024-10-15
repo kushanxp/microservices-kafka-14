@@ -88,6 +88,16 @@ resilience4j:
           - java.lang.RuntimeException
         ignore-exceptions:
           - java.lang.Throwable
+  ratelimiter:
+    configs:
+      default:
+        timeout-duration:
+          seconds: 1
+        limit-refresh-period:
+          seconds: 5
+        limit-for-period:
+          count: 10
+
 
 
 

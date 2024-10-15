@@ -70,7 +70,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>kushanxp/${project.name}:s9</image>
+						<image>kushanxp/${project.name}:s10</image>
 					</to>
 				</configuration>
 			</plugin>
