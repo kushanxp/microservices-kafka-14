@@ -84,9 +84,10 @@ resilience4j:
         max-attempts: 3
         enable-exponential-backoff: true
         exponential-backoff-multiplier: 5
-        exponential-backoff-max-attempts: 10
         retry-exceptions:
           - java.lang.RuntimeException
+        ignore-exceptions:
+          - java.lang.Throwable
 
 
 

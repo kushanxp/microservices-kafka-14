@@ -204,10 +204,10 @@ public class AccountsController {
     @GetMapping("/build-info")
     public ResponseEntity<String> getBuildVersion() {
         logger.debug("getBuildVersion called!");
-        throw new RuntimeException("buildInfoRetry");
-       /* return ResponseEntity
+        //throw new RuntimeException("buildInfoRetry"); uncomment for Retry the below method.
+       return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(buildVersion);*/
+                .body(buildVersion);
     }
 
     public ResponseEntity<String> getBuildVersionFallback(Throwable throwable) {
