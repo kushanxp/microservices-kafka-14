@@ -13,8 +13,8 @@ spring:
           enabled: false
           lower-case-service-id: true
       httpclient:
-        connect-timeout: 5000
-        response-timeout: 3000
+        connect-timeout: 1000
+        response-timeout: 10s
   data:
     redis:
       host: localhost

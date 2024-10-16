@@ -4,15 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7829841-cee5-4485-bd37-703bcd1c84fa" name="Changes" comment="Rate limiter pattern for Cards implemented for contact-info endpoint.&#10;1 user - 1 request per second or else too many requests will be thrown.">
+    <list default="true" id="f7829841-cee5-4485-bd37-703bcd1c84fa" name="Changes" comment="docker s10 tag related changes">
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.bloomcycle.bin/xl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage-cache.bin/xl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/.usage.json/xl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin/xl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin.bkp/xl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin/xl.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/format.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/default/.data/minio/.minio.sys/tmp/5c667e1c-7122-4eff-9c22-91786cf4c4c2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/observability/alloy/alloy-local-config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/observability/grafana/datasource.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/observability/loki/loki-config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/observability/prometheus/prometheus.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose/observability/tempo/tempo.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose/default/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/eurekaserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/eurekaserver/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -250,7 +265,7 @@
       <workItem from="1706750442914" duration="5466000" />
       <workItem from="1707135855392" duration="603000" />
       <workItem from="1728600989563" duration="98392000" />
-      <workItem from="1729026848141" duration="2045000" />
+      <workItem from="1729026848141" duration="10920000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -420,7 +435,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728956989975</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="docker s10 tag related changes">
+      <option name="closed" value="true" />
+      <created>1729029890698</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1729029890698</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,6 +465,7 @@
     <MESSAGE value="Circuit breaker retry logic added to Loans service" />
     <MESSAGE value="Circuit breaker retry logic added to Account build-info endpoint" />
     <MESSAGE value="Rate limiter pattern for Cards implemented for contact-info endpoint.&#10;1 user - 1 request per second or else too many requests will be thrown." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rate limiter pattern for Cards implemented for contact-info endpoint.&#10;1 user - 1 request per second or else too many requests will be thrown." />
+    <MESSAGE value="docker s10 tag related changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker s10 tag related changes" />
   </component>
 </project>
