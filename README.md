@@ -1,1 +1,1 @@
-Added circuit breaker functionality
+Grafana, Promtail, Loki, Prometheus, Tempo and OpenTelemetry integration.
