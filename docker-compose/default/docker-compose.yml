@@ -29,20 +29,6 @@ services:
       file: common-config.yml
       service: microservices-db-config
 
-#  redis:
-#    image: redis
-#    container_name: redis
-#    ports:
-#      - 6379:6379
-#    healthcheck:
-#      test: redis-cli ping  | grep PONG || exit 1
-#      timeout: 10s
-#      retries: 10
-#    extends:
-#      file: common-config.yml
-#      service: network-deploy-service
-
-
   configserver:
     image: kushanxp/configserver:s11
     container_name: configserver_ms
@@ -146,10 +132,6 @@ services:
       - 8072:8072
     environment:
       SPRING_APPLICATION_NAME: gatewayserver
-      #SPRING_DATA_REDIS_HOST: redis
-      #SPRING_DATA_REDIS_PORT: 6379
-      #SPRING_DATA_REDIS_CONNECT_TIMEOUT: 10000
-      #SPRING_DATA_REDIS_TIMEOUT: 1000
     extends:
       file: common-config.yml
       service: microservices-eurekaserver-config
@@ -160,8 +142,6 @@ services:
         condition: service_healthy
       cards:
         condition: service_healthy
-      #redis:
-      #  condition: service_healthy
 
   read:
     image: grafana/loki:3.0.0

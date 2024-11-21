@@ -44,6 +44,10 @@ management:
     env:
       enabled: true
 
+  observations:
+    key-values:
+      application: ${spring.application.name}
+
 endpoints:
   shutdown:
     enabled: true
