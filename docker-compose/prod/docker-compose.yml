@@ -29,6 +29,19 @@ services:
       file: common-config.yml
       service: microservices-db-config
 
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0.6
+    container_name: keycloak
+    ports:
+      - 7080:8080
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    command: "start-dev"
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
   configserver:
     image: kushanxp/configserver:s12
     container_name: configserver_ms
@@ -139,6 +152,7 @@ services:
     environment:
       SPRING_APPLICATION_NAME: gatewayserver
       OTEL_SERVICE_NAME: gatewayserver
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: "http://keycloak:8080/realms/master/protocol/openid-connect/certs"
     extends:
       file: common-config.yml
       service: microservices-eurekaserver-config
