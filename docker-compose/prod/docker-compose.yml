@@ -30,7 +30,7 @@ services:
       service: microservices-db-config
 
   configserver:
-    image: kushanxp/configserver:s11
+    image: kushanxp/configserver:s12
     container_name: configserver_ms
     ports:
       - 8071:8071
@@ -47,7 +47,7 @@ services:
       OTEL_SERVICE_NAME: configserver
 
   eurekaserver:
-    image: kushanxp/eurekaserver:s11
+    image: kushanxp/eurekaserver:s12
     container_name: eurekaserver_ms
     ports:
       - 8070:8070
@@ -66,7 +66,7 @@ services:
 
 
   accounts:
-    image: kushanxp/accounts:s11
+    image: kushanxp/accounts:s12
     container_name: accounts_ms
     ports:
       - 8080:8080
@@ -88,7 +88,7 @@ services:
         condition: service_healthy
 
   loans:
-    image: kushanxp/loans:s11
+    image: kushanxp/loans:s12
     container_name: loans_ms
     ports:
       - 8090:8090
@@ -110,7 +110,7 @@ services:
         condition: service_healthy
 
   cards:
-    image: kushanxp/cards:s11
+    image: kushanxp/cards:s12
     container_name: cards_ms
     ports:
       - 9000:9000
@@ -132,7 +132,7 @@ services:
         condition: service_healthy
 
   gatewayserver:
-    image: kushanxp/gatewayserver:s11
+    image: kushanxp/gatewayserver:s12
     container_name: gatewayserver_ms
     ports:
       - 8072:8072
