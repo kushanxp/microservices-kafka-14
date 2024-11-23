@@ -81,8 +81,8 @@ services:
   accounts:
     image: kushanxp/accounts:s12
     container_name: accounts_ms
-    ports:
-      - 8080:8080
+    # ports:
+      # - 8080:8080 commenting this line so it's not exposed to the outside world
     healthcheck:
       test: curl --fail http://localhost:8080/actuator/health/readiness | grep "UP" || exit 1
       start_period: 10s
@@ -103,8 +103,8 @@ services:
   loans:
     image: kushanxp/loans:s12
     container_name: loans_ms
-    ports:
-      - 8090:8090
+    # ports:
+     #  - 8090:8090 commenting this line so it's not exposed to the outside world
     healthcheck:
       test: curl --fail http://localhost:8090/actuator/health/readiness | grep "UP" || exit 1
       start_period: 10s
@@ -125,8 +125,8 @@ services:
   cards:
     image: kushanxp/cards:s12
     container_name: cards_ms
-    ports:
-      - 9000:9000
+    # ports:
+     # - 9000:9000 commenting this line so it's not exposed to the outside world
     healthcheck:
       test: curl --fail http://localhost:9000/actuator/health/readiness | grep "UP" || exit 1
       start_period: 10s
