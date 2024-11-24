@@ -46,6 +46,7 @@ public class AccountsServiceImpl  implements IAccountsService {
         }
         Customer savedCustomer = customerRepository.save(customer);
         Accounts savedAccount = accountsRepository.save(createNewAccount(savedCustomer));
+        sendCommunication(savedCustomer, savedAccount);
     }
 
     private void sendCommunication(Customer customer, Accounts accounts) {
@@ -135,6 +136,7 @@ public class AccountsServiceImpl  implements IAccountsService {
      */
     @Override
     public boolean updateCommunicationSwitch(Long accountNumber) {
+        logger.info("Message received for account number {}", accountNumber);
         boolean isUpdated = false;
         if(null != accountNumber) {
             Accounts accounts = accountsRepository.findById(accountNumber).orElseThrow(
@@ -144,6 +146,7 @@ public class AccountsServiceImpl  implements IAccountsService {
             accountsRepository.save(accounts);
             isUpdated = true;
         }
+        logger.info("Updated communication switch for account number {}", accountNumber);
         return isUpdated;
     }
 

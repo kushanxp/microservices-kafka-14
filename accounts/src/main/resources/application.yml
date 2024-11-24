@@ -27,7 +27,7 @@ spring:
       definition: updateCommunication
     stream:
       bindings:
-        sendCommunication-out-0:
+        send-communication-out-0:
           destination: send-communication
         updateCommunication-in-0:
           destination: communication-sent
