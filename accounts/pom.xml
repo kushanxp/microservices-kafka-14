@@ -87,6 +87,14 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-stream</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -107,7 +115,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>kushanxp/${project.name}:s12</image>
+						<image>kushanxp/${project.name}:s13</image>
 					</to>
 				</configuration>
 			</plugin>

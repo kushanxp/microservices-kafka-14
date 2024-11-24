@@ -29,6 +29,24 @@ services:
       file: common-config.yml
       service: microservices-db-config
 
+  rabbit:
+    image: rabbitmq:3.12-management
+    container_name: rabbitmq
+    ports:
+      - 5672:5672 # AMQP  port
+      - 15672:15672 # Management port UI
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+    healthcheck:
+      test: [ "CMD", "rabbitmqctl", "status" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   keycloak:
     image: quay.io/keycloak/keycloak:26.0.6
     container_name: keycloak
@@ -43,7 +61,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: kushanxp/configserver:s12
+    image: kushanxp/configserver:s13
     container_name: configserver_ms
     ports:
       - 8071:8071
@@ -60,7 +78,7 @@ services:
       OTEL_SERVICE_NAME: configserver
 
   eurekaserver:
-    image: kushanxp/eurekaserver:s12
+    image: kushanxp/eurekaserver:s13
     container_name: eurekaserver_ms
     ports:
       - 8070:8070
@@ -79,7 +97,7 @@ services:
 
 
   accounts:
-    image: kushanxp/accounts:s12
+    image: kushanxp/accounts:s13
     container_name: accounts_ms
     # ports:
       # - 8080:8080 commenting this line so it's not exposed to the outside world
@@ -93,15 +111,18 @@ services:
       SPRING_APPLICATION_NAME: accounts
       SPRING_DATASOURCE_URL: jdbc:mysql://accountsdb:3306/accountsDB
       OTEL_SERVICE_NAME: accounts
+      SPRING_RABBITMQ_HOST: rabbit
     extends:
       file: common-config.yml
       service: microservices-eurekaserver-config
     depends_on:
       accountsdb:
         condition: service_healthy
+      rabbit:
+        condition: service_healthy
 
   loans:
-    image: kushanxp/loans:s12
+    image: kushanxp/loans:s13
     container_name: loans_ms
     # ports:
      #  - 8090:8090 commenting this line so it's not exposed to the outside world
@@ -123,7 +144,7 @@ services:
         condition: service_healthy
 
   cards:
-    image: kushanxp/cards:s12
+    image: kushanxp/cards:s13
     container_name: cards_ms
     # ports:
      # - 9000:9000 commenting this line so it's not exposed to the outside world
@@ -145,7 +166,7 @@ services:
         condition: service_healthy
 
   gatewayserver:
-    image: kushanxp/gatewayserver:s12
+    image: kushanxp/gatewayserver:s13
     container_name: gatewayserver_ms
     ports:
       - 8072:8072
@@ -163,6 +184,19 @@ services:
         condition: service_healthy
       cards:
         condition: service_healthy
+
+  message:
+    image: kushanxp/message:s13
+    container_name: message_ms
+    depends_on:
+      rabbit:
+         condition: service_healthy
+    environment:
+      SPRING_RABBITMQ_HOST: rabbit
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
 
   read:
     image: grafana/loki:3.0.0

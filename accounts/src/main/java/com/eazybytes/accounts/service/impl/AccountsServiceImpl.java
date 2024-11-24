@@ -1,6 +1,7 @@
 package com.eazybytes.accounts.service.impl;
 
 import com.eazybytes.accounts.constants.AccountsConstants;
+import com.eazybytes.accounts.dto.AccountMessageDto;
 import com.eazybytes.accounts.dto.AccountsDto;
 import com.eazybytes.accounts.dto.CustomerDto;
 import com.eazybytes.accounts.entity.Accounts;
@@ -13,6 +14,9 @@ import com.eazybytes.accounts.repository.AccountsRepository;
 import com.eazybytes.accounts.repository.CustomerRepository;
 import com.eazybytes.accounts.service.IAccountsService;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -25,6 +29,9 @@ public class AccountsServiceImpl  implements IAccountsService {
 
     private AccountsRepository accountsRepository;
     private CustomerRepository customerRepository;
+    private final StreamBridge streamBridge;
+
+    private static final Logger logger = LoggerFactory.getLogger(AccountsServiceImpl.class);
 
     /**
      * @param customerDto - CustomerDto Object
@@ -38,7 +45,15 @@ public class AccountsServiceImpl  implements IAccountsService {
                     +customerDto.getMobileNumber());
         }
         Customer savedCustomer = customerRepository.save(customer);
-        accountsRepository.save(createNewAccount(savedCustomer));
+        Accounts savedAccount = accountsRepository.save(createNewAccount(savedCustomer));
+    }
+
+    private void sendCommunication(Customer customer, Accounts accounts) {
+        var accountMsgDto = new AccountMessageDto(accounts.getAccountNumber(), customer.getName(),
+                customer.getEmail(), customer.getMobileNumber());
+        logger.info("Sending communication request for the details {} ", accountMsgDto);
+        var result = streamBridge.send("send-communication-out-0", accountMsgDto);
+        logger.info("Data received from send-communication-out-0 {}", result);
     }
 
     /**
@@ -111,6 +126,25 @@ public class AccountsServiceImpl  implements IAccountsService {
         accountsRepository.deleteByCustomerId(customer.getCustomerId());
         customerRepository.deleteById(customer.getCustomerId());
         return true;
+    }
+
+    /**
+     *
+     * @param accountNumber Account Number
+     * @return boolean indicating if the update of communication switch is successful or not
+     */
+    @Override
+    public boolean updateCommunicationSwitch(Long accountNumber) {
+        boolean isUpdated = false;
+        if(null != accountNumber) {
+            Accounts accounts = accountsRepository.findById(accountNumber).orElseThrow(
+                    () -> new ResourceNotFoundException("Account", "AccountNumber", accountNumber.toString())
+            );
+            accounts.setCommunicationSwitch(true);
+            accountsRepository.save(accounts);
+            isUpdated = true;
+        }
+        return isUpdated;
     }
 
 
