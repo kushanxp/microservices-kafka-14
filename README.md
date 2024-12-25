@@ -1,1 +1,1 @@
-Grafana, Promtail, Loki, Prometheus, Tempo, OpenTelemetry, Security and RabbitMQ integration.
+Grafana, Promtail, Loki, Prometheus, Tempo, OpenTelemetry, Security and Kafka integration.
